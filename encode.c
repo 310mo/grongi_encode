@@ -4,8 +4,8 @@
 #define N 81
 
 typedef struct _keitaiso {
-    char hinshi[30];
-    char hinshi2[30];
+    char hinshi[200];
+    char hinshi2[200];
     char word[200];
 } keitaiso;
 
