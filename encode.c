@@ -210,8 +210,6 @@ char *excep_hand(char c1, char c2, char c3, char c4, char c5, char c6, int ii, i
         }
     }
     else {
-        //printf("reach else\n");
-        //printf("%s\n", keitaisos[ii].hinshi);
         //助詞の例外処理をここで行う
         if(strcmp(keitaisos[ii].hinshi, "助詞")==0) {
             //printf("reach joshi\n");
@@ -241,6 +239,7 @@ char *excep_hand(char c1, char c2, char c3, char c4, char c5, char c6, int ii, i
             return japgro[j].gro;
         }
     }
+    return "あ";
 }
 
 
@@ -273,20 +272,25 @@ void translate(int num_word, keitaiso *keitaisos) {
                             if(word[word_count]==ga[0] && word[word_count+1] == ga[1] && word[word_count+2] == ga[2]) {
                                 strcat(result_word, "グ");
                             }
-                            if(word[word_count]==no[0] && word[word_count+1] == no[1] && word[word_count+2] == no[2]) {
+                            else if(word[word_count]==no[0] && word[word_count+1] == no[1] && word[word_count+2] == no[2]) {
+                                printf("reach n %s\n", japgro[j].jap);
                                 strcat(result_word, "ン");
                             }
-                            if(word[word_count]==ha[0] && word[word_count+1] == ha[1] && word[word_count+2] == ha[2]) {
+                            else if(word[word_count]==ha[0] && word[word_count+1] == ha[1] && word[word_count+2] == ha[2]) {
                                 strcat(result_word, "パ");
                             }
-                            if(word[word_count]==wo[0] && word[word_count+1] == wo[1] && word[word_count+2] == wo[2]) {
+                            else if(word[word_count]==wo[0] && word[word_count+1] == wo[1] && word[word_count+2] == wo[2]) {
                                 strcat(result_word, "ゾ");
                             }
-                            if(word[word_count]==de[0] && word[word_count+1] == de[1] && word[word_count+2] == de[2]) {
+                            else if(word[word_count]==de[0] && word[word_count+1] == de[1] && word[word_count+2] == de[2]) {
                                 strcat(result_word, "グ");
                             }
-                            if(word[word_count]==to[0] && word[word_count+1] == to[1] && word[word_count+2] == to[2]) {
+                            else if(word[word_count]==to[0] && word[word_count+1] == to[1] && word[word_count+2] == to[2]) {
                                 strcat(result_word, "ド");
+                            }
+                            else {
+                                printf("reach else %s\n", japgro[j].jap);
+                                strcat(result_word, japgro[j].gro);
                             }
                         }
                         else {
