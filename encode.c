@@ -273,7 +273,7 @@ void translate(int num_word, keitaiso *keitaisos) {
                                 strcat(result_word, "グ");
                             }
                             else if(word[word_count]==no[0] && word[word_count+1] == no[1] && word[word_count+2] == no[2]) {
-                                printf("reach n %s\n", japgro[j].jap);
+                                //printf("reach n %s\n", japgro[j].jap);
                                 strcat(result_word, "ン");
                             }
                             else if(word[word_count]==ha[0] && word[word_count+1] == ha[1] && word[word_count+2] == ha[2]) {
@@ -289,7 +289,7 @@ void translate(int num_word, keitaiso *keitaisos) {
                                 strcat(result_word, "ド");
                             }
                             else {
-                                printf("reach else %s\n", japgro[j].jap);
+                                //printf("reach else %s\n", japgro[j].jap);
                                 strcat(result_word, japgro[j].gro);
                             }
                         }
