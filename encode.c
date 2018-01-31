@@ -288,9 +288,6 @@ void translate(int num_word, keitaiso *keitaisos) {
                             if(word[word_count]==to[0] && word[word_count+1] == to[1] && word[word_count+2] == to[2]) {
                                 strcat(result_word, "ド");
                             }
-                            else {
-                                strcat(result_word, japgro[j].gro);
-                            }
                         }
                         else {
                             strcat(result_word, japgro[j].gro);
